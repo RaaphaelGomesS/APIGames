@@ -16,4 +16,6 @@ const games = database.define("games", {
   },
 });
 
+games.sync();
+
 export default games;

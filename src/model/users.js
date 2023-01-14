@@ -16,4 +16,6 @@ const users = database.define("users", {
   },
 });
 
+users.sync();
+
 export default users;
