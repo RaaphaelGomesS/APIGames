@@ -9,7 +9,7 @@ const JWTSecret = process.env.KEY_JWS;
 
 const links = [
   {
-    href: `http://localhost:${process.env.PORT || 3000}/auth`,
+    href: `${process.env.DB_HOST}${process.env.PORT || 3000}/auth`,
     method: "POST",
     rel: "login",
   },

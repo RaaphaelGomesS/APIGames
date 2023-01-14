@@ -1,6 +1,9 @@
 import Express from "express";
 import games from "../model/games.js";
 import { auth } from "../../index.js";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const router = Express.Router();
 
@@ -8,7 +11,7 @@ router.get("/games", auth, (req, res) => {
 
   const links = [
     {
-      href: `http://localhost:${process.env.PORT || 3000}/game`,
+      href: `${process.env.DB_HOST}${process.env.PORT || 3000}/game`,
       method: "POST",
       rel: "post_game",
     }
@@ -33,18 +36,18 @@ router.get("/game/:id", auth, (req, res) => {
 
     const links = [
       {
-        href: `http://localhost:${process.env.PORT || 3000}/games`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/games`,
         method: "GET",
         rel: "get_all_games",
       },
 
       {
-        href: `http://localhost:${process.env.PORT || 3000}/game/${id}`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/game/${id}`,
         method: "PUT",
         rel: "edit_game",
       },
       {
-        href: `http://localhost:${process.env.PORT || 3000}/game/${id}`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/game/${id}`,
         method: "DELETE",
         rel: "delete_game",
       },
@@ -73,7 +76,7 @@ router.post("/game", auth, (req, res) => {
 
   const links = [
     {
-      href: `http://localhost:${process.env.PORT || 3000}/games`,
+      href: `${process.env.DB_HOST}${process.env.PORT || 3000}/games`,
       method: "GET",
       rel: "get_all_games",
     }
@@ -103,13 +106,13 @@ router.delete("/game/:id", auth, (req, res) => {
 
     const links = [
       {
-        href: `http://localhost:${process.env.PORT || 3000}/games`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/games`,
         method: "GET",
         rel: "get_all_games",
       },
 
       {
-        href: `http://localhost:${process.env.PORT || 3000}/game`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/game`,
         method: "POST",
         rel: "post_game",
       },
@@ -138,13 +141,13 @@ router.put("/game/:id", auth, (req, res) => {
 
     const links = [
       {
-        href: `http://localhost:${process.env.PORT || 3000}/games`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/games`,
         method: "GET",
         rel: "get_all_games",
       },
 
       {
-        href: `http://localhost:${process.env.PORT || 3000}/game/${id}`,
+        href: `${process.env.DB_HOST}${process.env.PORT || 3000}/game/${id}`,
         method: "GET",
         rel: "get_game",
       },
