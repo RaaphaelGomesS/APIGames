@@ -76,24 +76,7 @@ router.post("/game", auth, (req, res) => {
       href: `http://localhost:${process.env.PORT || 3000}/games`,
       method: "GET",
       rel: "get_all_games",
-    },
-
-    {
-      href: `http://localhost:${process.env.PORT || 3000}/game/${id}`,
-      method: "GET",
-      rel: "get_game",
-    },
-
-    {
-      href: `http://localhost:${process.env.PORT || 3000}/game/${id}`,
-      method: "PUT",
-      rel: "edit_game",
-    },
-    {
-      href: `http://localhost:${process.env.PORT || 3000}/game/${id}`,
-      method: "DELETE",
-      rel: "delete_game",
-    },
+    }
   ];
 
   const creatGame = games
