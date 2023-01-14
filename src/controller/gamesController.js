@@ -11,7 +11,7 @@ router.get("/games", auth, (req, res) => {
 
   const links = [
     {
-      href: `${process.env.URL}${process.env.PORT || 3000}/game`,
+      href: `https://apigames-production.up.railway.app/game`,
       method: "POST",
       rel: "post_game",
     }
@@ -36,18 +36,18 @@ router.get("/game/:id", auth, (req, res) => {
 
     const links = [
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/games`,
+        href: `https://apigames-production.up.railway.app/games`,
         method: "GET",
         rel: "get_all_games",
       },
 
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/game/${id}`,
+        href: `https://apigames-production.up.railway.app/game/${id}`,
         method: "PUT",
         rel: "edit_game",
       },
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/game/${id}`,
+        href: `https://apigames-production.up.railway.app/game/${id}`,
         method: "DELETE",
         rel: "delete_game",
       },
@@ -76,7 +76,7 @@ router.post("/game", auth, (req, res) => {
 
   const links = [
     {
-      href: `${process.env.URL}${process.env.PORT || 3000}/games`,
+      href: `https://apigames-production.up.railway.app/games`,
       method: "GET",
       rel: "get_all_games",
     }
@@ -106,13 +106,13 @@ router.delete("/game/:id", auth, (req, res) => {
 
     const links = [
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/games`,
+        href: `https://apigames-production.up.railway.app/games`,
         method: "GET",
         rel: "get_all_games",
       },
 
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/game`,
+        href: `https://apigames-production.up.railway.app/game`,
         method: "POST",
         rel: "post_game",
       },
@@ -141,13 +141,13 @@ router.put("/game/:id", auth, (req, res) => {
 
     const links = [
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/games`,
+        href: `https://apigames-production.up.railway.app/games`,
         method: "GET",
         rel: "get_all_games",
       },
 
       {
-        href: `${process.env.URL}${process.env.PORT || 3000}/game/${id}`,
+        href: `https://apigames-production.up.railway.app/game/${id}`,
         method: "GET",
         rel: "get_game",
       },

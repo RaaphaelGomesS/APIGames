@@ -9,7 +9,7 @@ const JWTSecret = process.env.KEY_JWS;
 
 const links = [
   {
-    href: `${process.env.URL}${process.env.PORT || 3000}/auth`,
+    href: `https://apigames-production.up.railway.app/auth`,
     method: "POST",
     rel: "login",
   },
