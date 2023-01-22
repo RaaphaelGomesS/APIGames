@@ -63,6 +63,7 @@ router.get("/game/:id", auth, (req, res) => {
           res.json({ game: game, _links: links });
         } else {
           res.sendStatus(404);
+          res.json({msg: "O game não foi encontrado!"})
         }
       })
       .catch((err) => {
