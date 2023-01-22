@@ -124,7 +124,6 @@ router.delete("/game/:id", auth, (req, res) => {
         where: { id: id },
       })
       .then(() => {
-        res.sendStatus(200);
         res.json({ msg: "Game foi deletado!", _links: links });
       })
       .catch((err) => {
