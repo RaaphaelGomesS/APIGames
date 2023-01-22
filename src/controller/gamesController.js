@@ -101,7 +101,7 @@ router.post("/game", auth, (req, res) => {
 
 router.delete("/game/:id", auth, (req, res) => {
   if (isNaN(req.params.id)) {
-    res.sendStatus(400);
+    res.status(400).json({err: "Falha na requisição"});
   } else {
     var id = parseInt(req.params.id);
 
