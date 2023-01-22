@@ -72,7 +72,7 @@ router.post("/register", (req, res) => {
       res.json({ UserCreated: creatUser, _links: links });
     })
     .catch(() => {
-      res.status(400);
+      res.status(401);
       res.json({ err: "Falha na requisição" });
     });
 });
